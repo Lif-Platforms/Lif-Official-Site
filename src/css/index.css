@@ -1,10 +1,13 @@
 body {
     padding: 0;
     margin: 0;
+    background-color: white;
 }
 
 header {
-    background-color: rgb(0, 132, 255);
+    background-image: url("../assets/Images/HomePage/Lif-Banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .header-title {
@@ -13,7 +16,9 @@ header {
     color: white;
     font-size: x-large;
     padding-top: 15%;
-    padding-bottom: 20%;
+    padding-bottom: 30%;
+    animation-name: headerAnimation;
+    animation-duration: 1s;
 }
 
 .header-divider {
@@ -40,7 +45,7 @@ nav {
     display: grid;
     grid-template-columns: 10% auto;
     background-color: white;
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     border-bottom: solid black 1px;
@@ -52,6 +57,7 @@ nav {
 
 .nav-logo img{
     width: 100px;
+    padding-left: 20px;
 }
 
 .nav-links {
@@ -60,5 +66,32 @@ nav {
 }
 
 .nav-links a {
-    padding-left: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 1em;
+    border: solid transparent 2px;
+}
+
+.nav-links a:hover {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 1em;
+    border: solid black 2px;
+}
+
+@keyframes headerAnimation {
+    0% {
+       opacity: 0;
+       transform: translateY(-70px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
