@@ -8,6 +8,8 @@ header {
     background-image: url("../assets/Images/HomePage/Lif-Banner.png");
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    margin-bottom: 150px;
 }
 
 .header-title {
@@ -16,7 +18,7 @@ header {
     color: white;
     font-size: x-large;
     padding-top: 15%;
-    padding-bottom: 30%;
+    padding-bottom: 20%;
     animation-name: headerAnimation;
     animation-duration: 1s;
 }
@@ -94,4 +96,26 @@ nav {
         opacity: 1;
         transform: translateY(0);
     }
+}
+.section-a {
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: center;
+    margin-bottom: 200px;
+    width: 100%;
+}
+
+.section-a img {
+    width: 700px;
+}
+
+.section-a h1 {
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+}
+
+.section-a p {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
 }
