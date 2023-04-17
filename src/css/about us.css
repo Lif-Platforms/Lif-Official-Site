@@ -1,0 +1,73 @@
+html {
+    background: rgb(170,14,219);
+    background: linear-gradient(240deg, rgba(170,14,219,1) 0%, rgba(0,212,255,1) 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color: transparent;
+    padding-top: 10%;
+    padding-bottom: 20%;
+}
+
+.header-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: white;
+    text-align: center;
+    
+    background-color: transparent;
+}
+
+@keyframes scroll-down-animation {
+    0% {
+        transform: translateY(30px);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(30px);
+    }
+}
+
+.scroll-down-arrow {
+    color: white;
+    font-size: 100px;
+    text-align: center;
+    padding-top: 20px;
+    animation-name: scroll-down-animation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.section-a {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: transparent;
+    padding: 30px;
+    border: solid white 2px;
+    margin-bottom: 20%;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.section-a h1 {
+    font-size: 80px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-right: 100px;
+    margin: auto;
+   
+}
+
+.section-a p {
+    font-size: large;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-indent: 30px;
+    padding-left: 20px;
+    border-left: solid white 2px;
+    line-height: 30px;
+}

@@ -43,50 +43,6 @@ header {
     fill: #FFFFFF;
 }
 
-nav {
-    display: grid;
-    grid-template-columns: 10% auto;
-    background-color: white;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    border-bottom: solid black 1px;
-}
-.nav-logo {
-    width: 100px;
-    padding: 10px;
-}
-
-.nav-logo img{
-    width: 100px;
-    padding-left: 20px;
-}
-
-.nav-links {
-    text-align: center;
-    margin: auto;
-}
-
-.nav-links a {
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 1em;
-    border: solid transparent 2px;
-}
-
-.nav-links a:hover {
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 1em;
-    border: solid black 2px;
-}
-
 @keyframes headerAnimation {
     0% {
        opacity: 0;
