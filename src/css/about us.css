@@ -71,3 +71,25 @@ header {
     border-left: solid white 2px;
     line-height: 30px;
 }
+
+@media screen and (max-width: 1150px) {
+    .section-a {
+        display: grid;
+        grid-template-columns: auto;
+        background-color: transparent;
+        padding: 30px;
+        border: solid white 2px;
+        margin-bottom: 20%;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .section-a p {
+        font-size: large;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        text-indent: 30px;
+        padding-left: 20px;
+        border-left: none;
+        line-height: 30px;
+    }
+}
