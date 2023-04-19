@@ -1,0 +1,27 @@
+header {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 20%;
+}
+header h1 {
+    font-size: 70px;
+}
+
+header span {
+    color: orange;
+    border: solid orange 3px;
+    border-radius: 1em;
+    padding: 5px;
+    font-weight: bold;
+}
+
+header p {
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+header a {
+    color: blue;
+    text-decoration: underline;
+}
