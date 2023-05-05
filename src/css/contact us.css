@@ -1,0 +1,79 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
+
+header {
+    background-image: url("../assets/Images/HomePage/Lif-Banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 150px;
+}
+
+.header-title {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: xx-large;
+    padding-top: 15%;
+    padding-bottom: 20%;
+}
+
+.section-a {
+    display: grid;
+    grid-template-columns: auto auto;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+.section-a h1 {
+    font-size: 50px;
+}
+
+.section-a p {
+    padding: 10px;
+}
+
+.section-a img {
+    width: 500px;
+}
+
+.section-b {
+    margin: 20px;
+}
+
+.contact-methods-header {
+    text-align: center;
+}
+
+.contact-methods-header h1 {
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact-methods-header {
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.link-container div {
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 1em;
+    padding: 30px;
+    color: white;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.link-container div:active {
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 1em;
+    padding: 30px;
+    color: white;
+    margin-top: 20px;
+    transform: scale(0.98);
+    transition: 0.3s;
+}
