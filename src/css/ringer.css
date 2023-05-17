@@ -1,0 +1,126 @@
+header {
+    background-image: url("../assets/Images/Services/Ringer-Bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 150px;
+}
+
+@keyframes headerAnimation {
+    0% {
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.header-title {
+    padding-top: 10%;
+    padding-bottom: 15%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    color: white;
+    width: 70%;
+    animation-name: headerAnimation;
+    animation-duration: 0.6s;
+}
+
+.header-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.header-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 221px;
+}
+
+.header-divider .shape-fill {
+    fill: #FFFFFF;
+}
+
+.section-a {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    margin: 20px;
+    margin-top: 200px;
+}
+
+.section-a h1 {
+    font-size: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: auto;
+}
+
+.section-a p {
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.section-a img {
+    width: 100%;
+}
+
+.section-b {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    margin: 20px;
+    margin-top: 200px;
+}
+
+.section-b h1 {
+    font-size: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: auto;
+}
+
+.section-b p {
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.section-b img {
+    width: 100%;
+}
+
+.section-c {
+    margin: 20px;
+    margin-top: 200px;
+}
+
+.section-c h1 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 80px;
+}
+
+.section-c p {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+}
+
+.section-c img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
