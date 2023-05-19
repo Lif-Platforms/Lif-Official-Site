@@ -7,8 +7,18 @@
     <link rel="stylesheet" href="css/support.css"> 
     <link rel="stylesheet" href="css/global.css"> 
     <link rel="shortcut icon" href="assets/Icons/favicon.ico">
+    <script src="scripts/sidenav-toggle.js"></script>
     <title>Lif Platforms | Support</title>
 </head>
+<div class="hamburger-menu-hide" id="side-nav">
+    <ul>
+        <li><a href="about us.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="contact us.html">Contact Us</a></li>
+    </ul>
+    <button type="button" onclick="CloseSideNav();"> X </button>
+</div>
 <nav>
     <div class="nav-logo">
         <a href="index.html">
@@ -18,8 +28,9 @@
     <div class="nav-links">
         <a href="about us.html">About Us</a>
         <a href="services.html">Services</a>
-        <a href="#">Support</a>
+        <a href="support.html">Support</a>
         <a href="contact us.html">Contact Us</a>
+        <button type="button" onclick="OpenSideNav();">&#8801;</button>
     </div>
 </nav>
 <header>

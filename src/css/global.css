@@ -11,7 +11,7 @@ nav {
     top: 0;
     width: 100%;
     border-bottom: solid black 1px;
-    z-index: 999;
+    z-index: 998;
 }
 .nav-logo {
     width: 100px;
@@ -148,6 +148,21 @@ footer {
     padding: 3px;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.hamburger-menu-show button:active {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgb(187, 186, 186);
+    border: none;
+    color: white;
+    font-size: large;
+    border-radius: 0.5em;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transform: scale(0.90);
 }
 
 .hamburger-menu-hide {
