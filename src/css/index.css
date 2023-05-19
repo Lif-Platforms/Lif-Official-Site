@@ -88,29 +88,6 @@ header {
     font-size: large;
 }
 
-.hamburger-menu-show {
-    background-color: white;
-    position: fixed;
-    height: 100%;
-    right: 0; 
-    top: 0;
-    z-index: 999;
-}
-
-.hamburger-menu-show ul {
-    list-style: none;
-    display: table;
-    margin: 0 auto;
-    margin-right: 20px;
-    text-align: center;
-    font-size: x-large;
-}
-
-.hamburger-menu-show li {
-    padding-top: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 @media screen and (max-width: 1150px) {
     .section-a {
         display: grid;
