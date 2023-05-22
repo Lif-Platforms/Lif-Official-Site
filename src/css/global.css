@@ -108,6 +108,16 @@ footer {
         margin-left: 0;
         margin-right: 20px;
     }
+    nav {
+        display: grid;
+        grid-template-columns: 100px auto;
+        background-color: white;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        border-bottom: solid black 1px;
+        z-index: 998;
+    }
 } 
 
 .hamburger-menu-show {
