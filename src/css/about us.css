@@ -51,6 +51,21 @@ header {
     margin-bottom: 20%;
     margin-right: 10px;
     margin-left: 10px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.section-a.show {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: transparent;
+    padding: 30px;
+    border: solid white 2px;
+    margin-bottom: 20%;
+    margin-right: 10px;
+    margin-left: 10px;
+    opacity: 1;
+    transition: 0.5s;
 }
 
 .section-a h1 {
@@ -73,6 +88,16 @@ header {
 }
 
 @media screen and (max-width: 1150px) {
+    .section-a.show {
+        display: grid;
+        grid-template-columns: auto;
+        background-color: transparent;
+        padding: 30px;
+        border: solid white 2px;
+        margin-bottom: 20%;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
     .section-a {
         display: grid;
         grid-template-columns: auto;
