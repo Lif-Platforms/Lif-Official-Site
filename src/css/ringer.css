@@ -109,6 +109,19 @@ header {
     grid-template-columns: 60% 40%;
     margin: 20px;
     margin-top: 200px;
+    opacity: 0;
+    transform: translateY(200px) scale(0.81);
+    transition: 0.3s ease-out;
+}
+
+.section-a.show {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    margin: 20px;
+    margin-top: 200px;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: 0.3s ease-out;
 }
 
 .section-a h1 {
@@ -135,6 +148,19 @@ header {
     grid-template-columns: 40% 60%;
     margin: 20px;
     margin-top: 200px;
+    opacity: 0;
+    transform: translateY(200px) scale(0.81);
+    transition: 0.3s ease-out;
+}
+
+.section-b.show {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    margin: 20px;
+    margin-top: 200px;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: 0.3s ease-out;
 }
 
 .section-b h1 {
@@ -159,6 +185,17 @@ header {
 .section-c {
     margin: 20px;
     margin-top: 200px;
+    opacity: 0;
+    transform: translateY(200px) scale(0.81);
+    transition: 0.3s ease-out;
+}
+
+.section-c.show {
+    margin: 20px;
+    margin-top: 200px;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: 0.3s ease-out;
 }
 
 .section-c h1 {

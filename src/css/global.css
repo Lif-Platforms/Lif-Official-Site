@@ -76,3 +76,10 @@ footer {
     border-radius: 0.5em;
     padding: 5px;
 }
+
+.footer-social img:hover {
+    width: 40px;
+    background-color: rgb(110, 110, 110);
+    border-radius: 0.5em;
+    padding: 5px;
+}
