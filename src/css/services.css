@@ -12,7 +12,8 @@ header {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 100px;
     margin: 0;
-    color: white
+    color: white;
+    text-shadow: 10px 10px 20px gray;
 }
 
 body {
@@ -42,4 +43,25 @@ body {
 .services-section div:hover {
     transform: scale(0.99);
     transition: 0.3s;
+}
+
+.custom-shape-divider-bottom-1686071847 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1686071847 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 170px;
+}
+
+.custom-shape-divider-bottom-1686071847 .shape-fill {
+    fill: #FFFFFF;
 }

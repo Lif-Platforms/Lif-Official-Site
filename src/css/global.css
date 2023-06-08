@@ -1,3 +1,6 @@
+html {
+    overflow-x: hidden;
+}
 body {
     padding: 0;
     margin: 0;
@@ -126,6 +129,42 @@ footer {
     }
 } 
 
+@media screen and (max-width: 850px) {
+    .footer-social {
+        display: none;
+    }
+    footer {
+        background-color: black;
+        color: white;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+
+@media screen and (max-width: 650px) { 
+    footer {
+        background-color: black;
+        color: white;
+        display: grid;
+        grid-template-columns: auto auto;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    footer {
+        background-color: black;
+        color: white;
+        display: grid;
+        grid-template-columns: auto;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+
 .hamburger-menu-show {
     background-color: white;
     position: fixed;
@@ -216,7 +255,7 @@ footer {
     border: none;
     color: white;
     font-size: large;
-    border-radius: 0.5em;
+    border-radius: 5em;
     padding: 3px;
     padding-left: 10px;
     padding-right: 10px;

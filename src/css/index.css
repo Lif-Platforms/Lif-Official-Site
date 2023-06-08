@@ -23,6 +23,10 @@ header {
     animation-duration: 0.5s;
 }
 
+.header-title p {
+    text-shadow: 5px 5px 10px rgb(0, 0, 0);  
+    font-weight: bold;
+}
 .header-divider {
     position: absolute;
     bottom: 0;

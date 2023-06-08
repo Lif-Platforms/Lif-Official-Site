@@ -19,6 +19,7 @@ header {
     font-size: xx-large;
     padding-top: 15%;
     padding-bottom: 20%;
+    text-shadow: 10px 10px 20px gray;
 }
 
 .section-a {
