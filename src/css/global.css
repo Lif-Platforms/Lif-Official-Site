@@ -23,7 +23,7 @@ nav {
 
 .nav-logo img{
     width: 100px;
-    padding-left: 20px;
+    padding-left: 5px;
 }
 
 .nav-links {
@@ -39,6 +39,8 @@ nav {
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 1em;
     border: solid transparent 2px;
+    color: black;
+    text-decoration: none;
 }
 
 .nav-links a:hover {
