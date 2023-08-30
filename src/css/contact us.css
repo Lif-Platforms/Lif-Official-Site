@@ -70,6 +70,10 @@ header {
     transition: 0.3s;
 }
 
+.link-container a {
+    text-decoration: none;
+}
+
 .link-container div:active {
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 1em;
