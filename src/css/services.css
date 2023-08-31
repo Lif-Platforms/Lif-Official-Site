@@ -45,8 +45,9 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     height: 450px;
+    color: black;
 }
-
+    
 .services-section img {
     width: 100%;
     text-align: center;
