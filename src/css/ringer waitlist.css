@@ -1,0 +1,101 @@
+header {
+    text-align: center;
+    padding: 15%;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+}
+
+header button {
+    background-color: orange;
+    border-radius: 2em;
+    padding: 5px 40px 5px 40px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+    font-weight: bold;
+    border: none;
+    display: block;
+    margin: 20px auto 0 auto;
+    transition: ease-in-out 0.2s;
+}
+
+header button:hover {
+    opacity: 0.5;
+}
+
+header button:active {
+    transform: scale(0.95);
+}
+
+header input {
+    padding: 10px;
+    border-radius: 0.3em;
+    font-size: xx-large;
+    border: none;
+    background-color: rgb(233, 233, 233);
+    box-shadow: 0px 5px 20px 1px rgb(172, 171, 171);
+}
+
+header h1 {
+    font-size: 80px;
+    margin: 0;
+}
+
+header p {
+    font-size: x-large;
+    margin-bottom: 50px;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.error-status {
+    color: red;
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+
+/*Optimization Styles*/
+@media screen and (max-width: 800px) {
+    header {
+        padding: 20% 10px 10px 10px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    header h1 {
+        font-size: 70px;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    header input {
+        width: 95%;
+    }
+
+    header h1 {
+        font-size: 60px;
+    }
+
+    header p {
+        font-size: x-large;
+    }
+}

@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/ringer.css"> 
+    <link rel="stylesheet" href="css/ringer waitlist.css"> 
     <link rel="stylesheet" href="css/global.css"> 
     <link rel="shortcut icon" href="assets/Icons/favicon.ico">
     <script src="scripts/services/ringer/animation-ringer1.js"></script>
     <script src="scripts/services/ringer/animation-ringer2.js"></script>
     <script src="scripts/services/ringer/animation-ringer3.js"></script>
-    <title>Lif Platforms | Ringer</title>
+    <title>Lif Platforms | Ringer Waitlist</title>
 </head>
 <nav>
     <div class="nav-logo">
@@ -25,46 +25,49 @@
         <a href="contact us.html">Contact Us</a>
     </div>
 </nav>
-<header>.
-    <div class="header-title">
-        <img src="assets/Images/Services/Ringerlogo.png" /> 
-        <button onclick="window.location.href='ringer waitlist.html';">Join The Waitlist</button>
-    </div>
-    <div class="header-divider">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" class="shape-fill"></path>
-        </svg>
-    </div>
+<script>
+    function add_to_waitlist() {
+        const email = document.getElementById('email-input').value;
+        document.getElementById('join-button').innerHTML = "<span class='loader' />";
+        const url = 'http://localhost:8005/waitlist/ringer';
+        const data = {
+            email: email
+        };
+
+        const requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        };
+
+        fetch(url, requestOptions)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.status === "OK") {
+                document.getElementById('join-button').innerHTML = "Success!";
+            }
+        })
+        .catch(error => {
+            document.getElementById('join-button').innerHTML = "Join";
+            document.getElementById('error-status').innerHTML = "Something Went Wrong! Try Again Later.";
+            console.log(error);
+        });
+    }
+</script>
+<header>
+    <h1>Join The Ringer Waitlist</h1>
+    <p>We'll send you an email when Ringer is ready to download</p>
+    <input type="email" id="email-input" placeholder="Your Email Here" />
+    <button id="join-button" onclick="add_to_waitlist()">Join</button>
+    <span id="error-status" class="error-status" />
 </header>
-<body>
-    <section class="section-a">
-        <div>
-            <h1>The Place To Chat</h1>
-            <p>Ringer is the place to chat and connect with the people that matter most</p>
-        </div>
-        <div>
-            <img src="assets/Images/Global/placeholder.png" alt="Ringer">
-        </div>
-    </section>
-    <section class="section-b">
-        <div>
-            <img src="assets/Images/Global/placeholder.png" alt="">
-        </div>
-        <div>
-            <h1>The Place To Hang Out</h1>
-            <p>Ringer makes it easy to hang out with your friends and people that matter</p>
-        </div>
-    </section>
-    <section class="section-c">
-        <div>
-            <h1>Cross Platform</h1>
-            <p>Ringer is available wherever you need it</p>
-        </div>
-        <div>
-            <img src="assets/Images/Global/placeholder.png" alt="">
-        </div>
-    </section>
-</body>
 <footer>
     <div class="footer-social">
         <h1>Lif Platforms</h1>
