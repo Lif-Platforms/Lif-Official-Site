@@ -167,16 +167,29 @@ footer {
     }
 }
 
+@keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+
 .hamburger-menu-show {
     background-color: white;
     position: fixed;
     height: 100%;
+    width: 100%;
     right: 0; 
     top: 0;
     z-index: 999;
     transition: 0.3s;
-    border-left: solid black 2px;
     padding-top: 20px;
+    opacity: 1;
 }
 
 .hamburger-menu-show ul {
@@ -186,39 +199,55 @@ footer {
     margin-right: 20px;
     text-align: center;
     font-size: x-large;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hamburger-menu-show li {
+    opacity: 0;
+    transform: translateX(40px);
+    animation: slideIn 0.5s ease forwards;
+}
+
+.hamburger-menu-show a {
     padding-top: 20px;
     font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    display: block;
+}
+
+/*Make links slide in 1 at a time*/
+.hamburger-menu-show li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.hamburger-menu-show li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.hamburger-menu-show li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.hamburger-menu-show li:nth-child(4) {
+    animation-delay: 0.4s;
 }
 
 .hamburger-menu-show button {
     position: absolute;
     top: 5px;
     right: 5px;
-    background-color: rgb(187, 186, 186);
+    background-color: rgb(224, 224, 224);
     border: none;
     color: white;
     font-size: large;
-    border-radius: 0.5em;
-    padding: 3px;
+    border-radius: 3em;
+    padding: 4px;
     padding-left: 10px;
     padding-right: 10px;
 }
 
 .hamburger-menu-show button:active {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background-color: rgb(187, 186, 186);
-    border: none;
-    color: white;
-    font-size: large;
-    border-radius: 0.5em;
-    padding: 3px;
-    padding-left: 10px;
-    padding-right: 10px;
     transform: scale(0.90);
 }
 
@@ -226,13 +255,14 @@ footer {
     background-color: white;
     position: fixed;
     height: 100%;
+    width: 0;
     right: 0; 
     top: 0;
     z-index: 999;
-    transform: translateX(200px);
     transition: 0.3s;
     border-left: solid black 2px;
     padding-top: 20px;
+    opacity: 0;
 }
 
 .hamburger-menu-hide ul {
@@ -242,11 +272,15 @@ footer {
     margin-right: 20px;
     text-align: center;
     font-size: x-large;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.hamburger-menu-hide li {
+.hamburger-menu-hide a {
     padding-top: 20px;
     font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    display: block;
 }
 
 .hamburger-menu-hide button {
