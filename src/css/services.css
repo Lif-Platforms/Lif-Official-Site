@@ -87,3 +87,35 @@ body {
 .custom-shape-divider-bottom-1686071847 .shape-fill {
     fill: #FFFFFF;
 }
+
+@media screen and (max-width: 700px) {
+    .services-section div {
+        width: 200px;
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header-title {
+        font-size: 70px;
+    }
+
+    .custom-shape-divider-bottom-1686071847 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .services-section {
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+
+    .services-section div {
+        margin-top: 20px;
+    }
+
+    .header-title {
+        margin-top: 50px;
+    }
+}
