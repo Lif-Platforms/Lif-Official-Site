@@ -230,3 +230,73 @@ header {
     margin-right: auto;
     margin-top: 100px;
 }
+
+@media screen and (max-width: 1200px) {
+    .section-a.show {
+        grid-template-columns: auto;
+        margin-top: 100px;
+    }
+
+    .section-b.show {
+        grid-template-columns: auto;
+        margin-top: 100px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .section-c img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .section-a.show h1 {
+        font-size: 60px;
+    }
+
+    .section-a.show p {
+        font-size: 30px;
+    }
+
+    .section-b.show h1 {
+        font-size: 60px;
+    }
+
+    .section-b.show p {
+        font-size: 30px;
+    }
+
+    .section-c.show h1 {
+        font-size: 60px;
+    }
+
+    .section-c.show p {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 500px ) {
+    .header-title button {
+        font-size: x-large;
+        padding: 15px;
+    }
+
+    .header-title button:active {
+        font-size: x-large;
+        padding: 15px;
+    }
+
+    .header-title button:hover {
+        font-size: x-large;
+        padding: 15px;
+    }
+
+    .header-title {
+        margin-top: 50px;
+        padding-bottom: 30%;
+    }
+
+    .header-divider svg {
+        height: 121px;
+    }
+}
