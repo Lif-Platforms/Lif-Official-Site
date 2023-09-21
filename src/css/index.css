@@ -139,4 +139,8 @@ header img {
         padding-top: 20%;
         padding-bottom: 30%;
     }
+
+    .header-divider svg {
+        height: 100px;
+    }
 }
