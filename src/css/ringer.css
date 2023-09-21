@@ -299,4 +299,8 @@ header {
     .header-divider svg {
         height: 121px;
     }
+
+    .header-title img {
+        width: 80%;
+    }
 }
