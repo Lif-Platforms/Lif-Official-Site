@@ -35,6 +35,8 @@ header {
     text-align: center;
     margin: auto;
     color: white;
+    z-index: 2;
+    position: relative;
 }
 
 .header-title button {
@@ -91,6 +93,7 @@ header {
     width: 100%;
     overflow: hidden;
     line-height: 0;
+    z-index: 1;
 }
 
 .header-divider svg {
@@ -98,6 +101,7 @@ header {
     display: block;
     width: calc(100% + 1.3px);
     height: 221px;
+    z-index: 1;
 }
 
 .header-divider .shape-fill {
