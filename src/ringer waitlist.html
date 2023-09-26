@@ -40,7 +40,7 @@
     function add_to_waitlist() {
         const email = document.getElementById('email-input').value;
         document.getElementById('join-button').innerHTML = "<span class='loader' />";
-        const url = 'http://localhost:8005/waitlist/ringer';
+        const url = 'https://api.mailservice.lifplatforms.com/waitlist/ringer';
         const data = {
             email: email
         };
