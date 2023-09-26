@@ -93,6 +93,35 @@ header img {
     width: 100%;
 }
 
+.section-a-image-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.section-a-image-container span {
+    display: none;
+}
+
+.section-a-image-container:hover > span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 10px;
+    border-radius: 0.5em;
+    color: black;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    display: block;
+}
+
+.section-a-image-container:hover > img {
+    opacity: 0.5;
+}
+
 .section-a h1 {
     font-size: 500%;
     font-family: Arial, Helvetica, sans-serif;
