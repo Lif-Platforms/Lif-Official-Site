@@ -15,8 +15,7 @@ header {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 100px;
     color: white;
-    text-align: center;
-    
+    text-align: center;   
     background-color: transparent;
 }
 
@@ -89,8 +88,7 @@ header {
 
 @media screen and (max-width: 1150px) {
     .section-a.show {
-        display: grid;
-        grid-template-columns: auto;
+        display: block;
         background-color: transparent;
         padding: 30px;
         border: solid white 2px;
@@ -99,8 +97,7 @@ header {
         margin-left: 10px;
     }
     .section-a {
-        display: grid;
-        grid-template-columns: auto;
+        display: block;
         background-color: transparent;
         padding: 30px;
         border: solid white 2px;
@@ -116,5 +113,15 @@ header {
         padding-left: 20px;
         border-left: none;
         line-height: 30px;
+    }
+
+    .section-a.show h1 {
+        font-size: 60px;
+        padding-right: 0;
+    }
+
+    .header-title {
+        font-size: 80px;
+        margin-top: 20%;
     }
 }
