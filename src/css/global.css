@@ -103,13 +103,14 @@ footer {
         background-color: transparent;
         border: none;
         font-size: xx-large;
+        color: black;
+        font-weight: 300;
+        margin: 0;
+        width: max-content;
+        padding: 0;
     }
 
     .nav-links button:active {
-        display: initial;
-        text-align: right;
-        background-color: transparent;
-        border: none;
         font-size: x-large;
     }
     .nav-links {
@@ -260,9 +261,13 @@ footer {
     top: 0;
     z-index: 999;
     transition: 0.3s;
-    border-left: solid black 2px;
     padding-top: 20px;
     opacity: 0;
+}
+
+.hamburger-menu-hide button {
+    display: none;
+
 }
 
 .hamburger-menu-hide ul {
