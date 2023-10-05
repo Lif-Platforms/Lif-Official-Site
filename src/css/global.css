@@ -57,9 +57,21 @@ footer {
     background-color: black;
     color: white;
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: auto auto;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-links-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.footer-links {
+    margin-left: 20px;
+    margin-right: 20px;
+    display: block;
 }
 
 .footer-links ul{
@@ -73,6 +85,11 @@ footer {
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
     text-decoration: underline;
+}
+
+.footer-social {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .footer-social img {
@@ -90,6 +107,13 @@ footer {
 
 .nav-links button {
     display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .footer-links-container {
+        display: grid;
+        grid-template-columns: auto;
+    }
 }
 
 @media screen and (max-width: 700px) { 
