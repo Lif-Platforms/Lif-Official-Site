@@ -1,0 +1,22 @@
+header {
+    padding: 10%;
+}
+
+header h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 81, 255);
+    font-size: 60px;
+}
+
+header p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 81, 255);
+    font-size: larger;
+}
+
+header span {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 50px;
+    display: block;
+    font-size: small;
+}
