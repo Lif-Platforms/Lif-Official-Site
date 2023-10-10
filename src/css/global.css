@@ -152,7 +152,7 @@ footer {
         top: 0;
         width: 100%;
         border-bottom: solid black 1px;
-        z-index: 998;
+        z-index: 999;
     }
 } 
 
@@ -211,7 +211,7 @@ footer {
     width: 100%;
     right: 0; 
     top: 0;
-    z-index: 999;
+    z-index: 998;
     transition: 0.3s;
     padding-top: 20px;
     opacity: 1;
@@ -220,7 +220,8 @@ footer {
 .hamburger-menu-show ul {
     list-style: none;
     display: table;
-    margin: 0 auto;
+    margin: 60px auto;
+    padding: none;
     margin-right: 20px;
     text-align: center;
     font-size: x-large;
@@ -283,7 +284,7 @@ footer {
     width: 0;
     right: 0; 
     top: 0;
-    z-index: 999;
+    z-index: 998;
     transition: 0.3s;
     padding-top: 20px;
     opacity: 0;
@@ -297,7 +298,8 @@ footer {
 .hamburger-menu-hide ul {
     list-style: none;
     display: table;
-    margin: 0 auto;
+    margin: 60px auto;
+    padding: none;
     margin-right: 20px;
     text-align: center;
     font-size: x-large;
