@@ -27,7 +27,7 @@
     </ul>
     <button type="button" onclick="CloseSideNav();">&#10060;</button>
 </div>
-<nav>
+<nav id="navbar">
     <div class="nav-logo">
         <a href="index.html">
             <img src="assets/Images/HomePage/Lif-Logo-Dark.png">
@@ -38,7 +38,11 @@
         <a href="services.html">Services</a>
         <a target="_blank" href="http://support.lifplatforms.com">Support</a>
         <a href="contact us.html">Contact Us</a>
-        <button type="button" onclick="OpenSideNav();">&#8801;</button>
+        <button type="button" onclick="ToggleSideNav();" class="topnav-hamburger-icon-closed" id="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </div>
 </nav>
 <body>
