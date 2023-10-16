@@ -1,0 +1,26 @@
+header {
+    background-image: url("../assets/Images/Services/lif-accounts-banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 150px;
+}
+
+.header-title {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: xx-large;
+    padding-top: 15%;
+    padding-bottom: 20%;
+}
+
+.header-title span {
+    color: orange;
+    border: 5px solid orange;
+    border-radius: 2em;
+    padding: 10px;
+    font-weight: bold;
+    font-size: x-large;
+    background-color: white;
+}
