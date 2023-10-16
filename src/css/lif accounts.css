@@ -3,6 +3,7 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    background-position: 50%;
     margin-bottom: 150px;
 }
 
@@ -13,6 +14,7 @@ header {
     font-size: xx-large;
     padding-top: 15%;
     padding-bottom: 20%;
+    background-color: transparent;
 }
 
 .header-title span {
@@ -23,4 +25,96 @@ header {
     font-weight: bold;
     font-size: x-large;
     background-color: white;
+}
+
+.section-a {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.section-a h1 {
+    font-size: 50px;
+}
+
+.section-a p {
+    font-size: large;
+}
+
+.services {
+    display: flexbox;
+    margin-top: 50px;
+}
+
+.services img {
+    width: 150px;
+    height: 150px;
+    border-radius: 1em;
+    box-shadow: 0px 0px 20px gray;
+    margin: 10px;
+}
+
+.section-b {
+    text-align: left;
+    padding: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.section-b h1 {
+    font-size: 50px;
+}
+
+.features-container {
+    display: flex;
+}
+
+.features {
+    display: block;
+    width: 500px;
+    border: 1px solid black;
+    border-radius: 1em;
+    margin: 0 5px 0 5px;
+    padding: 10px;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+@keyframes features-animation {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.features.show {
+    display: block;
+    width: 500px;
+    border: 1px solid black;
+    border-radius: 1em;
+    margin: 0 5px 0 5px;
+    padding: 10px;
+    transition: ease-in-out 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.features.show:nth-of-type(1) {
+    animation-name: features-animation;
+    animation-duration: 0.3s;
+    animation-delay: 0;
+}
+
+.features.show:nth-of-type(2) {
+    animation-name: features-animation;
+    animation-duration: 0.3s;
+    animation-delay: 0.1s; /* Delayed by 1 second */
+}
+
+.features.show:nth-of-type(3) {
+    animation-name: features-animation;
+    animation-duration: 0.3s;
+    animation-delay: 0.2s; /* Delayed by 2 seconds */
 }
