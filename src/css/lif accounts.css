@@ -17,6 +17,21 @@ header {
     background-color: transparent;
 }
 
+@media screen and (max-width: 500px) {
+    .header-title {
+        font-size: x-large;
+    }
+    .profile-personalization-img {
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .header-title {
+        padding-top: 25%;
+    }
+}
+
 .header-title span {
     color: orange;
     border: 5px solid orange;
