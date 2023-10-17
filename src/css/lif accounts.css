@@ -65,6 +65,15 @@ header {
 
 .features-container {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+@media screen and (max-width: 1775px) {
+    .features h1 {
+        font-size: 40px;
+    }
 }
 
 .features {
@@ -117,4 +126,8 @@ header {
     animation-name: features-animation;
     animation-duration: 0.3s;
     animation-delay: 0.2s; /* Delayed by 2 seconds */
+}
+
+.profile-personalization-img {
+    width: 70%;
 }
