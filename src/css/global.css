@@ -346,6 +346,7 @@ footer {
     width: 0;
     right: 0; 
     top: 0;
+    white-space: nowrap;
     z-index: 998;
     transition: 0.3s;
     padding-top: 20px;
