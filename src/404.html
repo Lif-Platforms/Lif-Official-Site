@@ -11,7 +11,7 @@
     <script src="scripts/index/animation-home1.js"></script>
     <title>Lif Platforms | Page Not Found</title>
 </head>
-<nav>
+<nav id="navbar">
     <div class="nav-logo">
         <a href="index.html">
             <img src="assets/Images/HomePage/Lif-Logo-Dark.png">
@@ -22,7 +22,11 @@
         <a href="services.html">Services</a>
         <a target="_blank" href="http://support.lifplatforms.com">Support</a>
         <a href="contact us.html">Contact Us</a>
-        <button type="button" onclick="OpenSideNav();">&#8801;</button>
+        <button type="button" onclick="ToggleSideNav();" class="topnav-hamburger-icon-closed" id="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </div>
 </nav>
 <div class="hamburger-menu-hide" id="side-nav">
@@ -32,7 +36,6 @@
         <li><a href="http://support.lifplatforms.com" target="_blank">Support</a></li>
         <li><a href="contact us.html">Contact Us</a></li>
     </ul>
-    <button type="button" onclick="CloseSideNav();">&#10060;</button>
 </div>
 <header>
     <img src="assets/Images/HomePage/Lif-Logo.png" alt="Lif Logo" />
@@ -78,7 +81,7 @@
         <div class="footer-links">
             <h1>Resources</h1>
             <ul>
-                <li><a href="#">Lif Accounts</a></li>
+                <li><a href="lif accounts.html">Lif Accounts</a></li>
                 <li><a href="terms of service.html">Terms of Service</a></li>
                 <li><a href="privacy policy.html">Privacy Policy</a></li>
             </ul>

@@ -78,7 +78,7 @@ header {
 
 .features {
     display: block;
-    width: 500px;
+    width: 350px;
     border: 1px solid black;
     border-radius: 1em;
     margin: 0 5px 0 5px;
@@ -101,7 +101,7 @@ header {
 
 .features.show {
     display: block;
-    width: 500px;
+    width: 350px;
     border: 1px solid black;
     border-radius: 1em;
     margin: 0 5px 0 5px;
