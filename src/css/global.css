@@ -390,3 +390,50 @@ footer {
     padding-left: 10px;
     padding-right: 10px;
 }
+
+/* Cookie Banner Notice */
+.cookie-banner-open {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    border-top: 1px solid black;
+    z-index: 999;
+    animation-name: cookie-banner-animation;
+    animation-duration: 0.3s;
+}
+
+.cookie-banner-open button {
+    text-align: center;
+    background: linear-gradient(90deg,#0edb8f,#00d4ff);
+    height: max-content;
+    border: none;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    border-radius: 0.5em;
+    align-self: center;
+    margin-left: 50px;
+    transition: 0.3s;
+}
+
+.cookie-banner-open button:hover {
+    opacity: 0.5;
+}
+
+@keyframes cookie-banner-animation {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.cookie-banner-closed {
+    display: none;
+}

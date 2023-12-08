@@ -10,6 +10,8 @@
     <script src="scripts/sidenav-toggle.js"></script>
     <script src="scripts/index/animation-home1.js"></script>
     <script src="scripts/microsoft-clarity.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script src="scripts/cookie-banner-toggle.js"></script>
     <title>Lif Platforms | Official Site</title>
 </head>
 <header>
@@ -48,6 +50,14 @@
         <li><a href="http://support.lifplatforms.com" target="_blank">Support</a></li>
         <li><a href="contact us.html">Contact Us</a></li>
     </ul>
+</div>
+<!--Cookie Banner Notice-->
+<div class="cookie-banner-closed" id="cookie-banner">
+    <div>
+        <h1>Accept Cookies?</h1>
+        <p>Lif Platforms uses cookies to provide analytics data for our site.</p>
+    </div>
+    <button onclick="accept_cookies()">Accept</button>
 </div>
 <body>
     <section class="section-a">
