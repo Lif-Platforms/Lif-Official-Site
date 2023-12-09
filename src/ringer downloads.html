@@ -9,6 +9,8 @@
     <link rel="shortcut icon" href="assets/Icons/favicon.ico">
     <script src="scripts/sidenav-toggle.js"></script>
     <script src="scripts/microsoft-clarity.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script src="scripts/cookie-banner-toggle.js"></script>
     <title>Lif Platforms | Ringer Downloads</title>
 </head>
 <div class="hamburger-menu-hide" id="side-nav">
@@ -34,6 +36,14 @@
         <button type="button" onclick="OpenSideNav();">&#8801;</button>
     </div>
 </nav>
+<!--Cookie Banner Notice-->
+<div class="cookie-banner-closed" id="cookie-banner">
+    <div>
+        <h1>Accept Cookies?</h1>
+        <p>Lif Platforms uses cookies to provide analytics data for our site.</p>
+    </div>
+    <button onclick="accept_cookies()">Accept</button>
+</div>
 <body>
     <h1 class="title">Download Ringer</h1>
     <h1 class="sub-title">Desktop</h1>

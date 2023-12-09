@@ -10,6 +10,8 @@
     <script src="scripts/sidenav-toggle.js"></script>
     <script src="scripts/index/animation-home1.js"></script>
     <script src="scripts/microsoft-clarity.js"></script>
+    <script src="scripts/cookie-banner-toggle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <title>Lif Platforms | Privacy Policy</title>
 </head>
 <nav id="navbar">
@@ -43,6 +45,14 @@
     <p>By using any of Lif Platforms services you agree to be bound by the privacy policy.</p>
     <span>Last Updated: 10/14/23</span>
 </header>
+<!--Cookie Banner Notice-->
+<div class="cookie-banner-closed" id="cookie-banner">
+    <div>
+        <h1>Accept Cookies?</h1>
+        <p>Lif Platforms uses cookies to provide analytics data for our site.</p>
+    </div>
+    <button onclick="accept_cookies()">Accept</button>
+</div>
 <body>
     <div class="content">
         <h1 align="center">Privacy Policy for Lif Platforms</h1>
