@@ -1,40 +1,45 @@
-.title {
-    margin-top: 150px;
+header {
+    margin: 10%;
+    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    margin-left: 20px;
 }
 
-.sub-title {
-    margin-top: 80px;
-    margin-left: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+header h1 {
+    margin-top: 30px;
+    font-size: 36px;
+}
+
+@media screen and (max-width: 700px) {
+    header img {
+        width: 90%;
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    header h1 {
+        font-size: 26px;
+        font-weight: bolder;
+    }
 }
 
 .downloads {
-    margin: 20px;
+    margin: 35px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .downloads div {
-    background-color: rgb(218, 218, 218);
-    border-radius: 0.5em;
-    width: 150px;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0px 0px 61.5px -16px rgba(0, 0, 0, 0.25);
+    border-radius: 24px;
+    width: 100%;
+    max-width: 700px;
     padding: 20px;
     margin: 20px;
-}
-
-.downloads img {
-    width: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
-
-
-.downloads h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
 }
 
 .downloads span {
@@ -42,6 +47,12 @@
     border: solid orange 3px;
     padding: 3px;
     border-radius: 2em;
+    font-size: larger;
+    padding: 10px 20px 10px 20px;
+    margin-left: 0;
+    margin-top: 5px;
+    display: block;
+    width: max-content;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
@@ -49,12 +60,17 @@
 .downloads button {
     background-color: orange;
     border: none;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+    margin-left: 0;
+    margin-top: 5px;
+    padding: 10px 20px 10px 20px;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    font-size: larger;
     border-radius: 2em;
+    transition: 0.3s ease-in-out;
+}
+
+.downloads button:hover {
+    opacity: 0.5;
 }
