@@ -52,12 +52,22 @@
     <h1>Download Ringer</h1>
     <p>Please select your platform.</p>
 </header>
+<script>
+    function handle_download(platform) {
+        // Define base URL
+        const base_url = "https://github.com/Lif-Platforms/Ringer-Client-Desktop/releases/latest/download";
+
+        if (platform === "windows") {
+            window.location.href = `${base_url}/Ringer.Setup.exe`;
+        }
+    }
+</script>
 <body>
     <div class="downloads">
         <div>
             <h1>Windows</h1>
             <p>Download Ringer for Windows.</p>
-            <button>Download</button>
+            <button onclick="handle_download('windows');">Download</button>
         </div>
         <div>
             <h1>Mac OS</h1>
