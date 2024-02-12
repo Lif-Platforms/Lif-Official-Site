@@ -32,14 +32,17 @@ header {
     }
 }
 
-.header-title span {
-    color: orange;
-    border: 5px solid orange;
-    border-radius: 2em;
-    padding: 10px;
-    font-weight: bold;
-    font-size: x-large;
-    background-color: white;
+.header-title a {
+    background-color: rgb(0, 110, 255);
+    border-radius: 0.5em;
+    color: white;
+    padding: 15px;
+    box-shadow: 0 0 15px rgb(170, 170, 170);
+    transition: 0.3s ease-in-out;
+}
+
+.header-title a:hover {
+    background-color: rgb(115, 176, 255);
 }
 
 .section-a {
