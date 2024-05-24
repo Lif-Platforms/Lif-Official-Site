@@ -59,24 +59,44 @@ nav {
 }
 
 footer {
-    background-color: black;
-    color: white;
-    display: grid;
+    background-color: #eeeeee;
+    color: black;
     grid-template-columns: auto auto;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+footer .hr-container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+footer hr {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    background-color: black;
+    height: 1px;
+}
+
 .footer-links-container {
     display: flex;
+    flex: 1 1 0;
     flex-wrap: wrap;
     margin: auto;
+    justify-content: center;
 }
 
 .footer-links {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
     display: block;
+}
+
+.footer-links h1 {
+    color: black;
+    font-size: x-large;
+    font-family: 'Inter';
 }
 
 .footer-links ul{
@@ -86,36 +106,46 @@ footer {
 }
 
 .footer-links a {
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-family: 'Inter';
     font-size: large;
     text-decoration: underline;
 }
 
 .footer-social {
+    display: flex;
+    flex: 1 1 0px;
+    justify-content: left;
     margin-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.footer-social h1 {
+    font-size: x-large;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 0;
+    padding: 0;
+    font-family: 'Inter';
     margin-right: 20px;
 }
 
 .footer-social img {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
     object-fit: contain;
-    background-color: rgb(66, 66, 66);
-    border-radius: 0.5em;
-    padding: 5px;
-}
-.footer-social img:hover {
-    width: 40px;
-    background-color: rgb(110, 110, 110);
-    border-radius: 0.5em;
-    padding: 5px;
+    cursor: pointer;
 }
 
-@media screen and (max-width: 600px) {
-    .footer-links-container {
-        display: grid;
-        grid-template-columns: auto;
+@media screen and (max-width: 430px) {
+    .footer-social {
+        display: none;
+    }
+
+    .hr-container {
+        display: none;
     }
 }
 
@@ -123,24 +153,6 @@ footer {
     .nav-links a {
         display: none;
     }
-    /*
-    .nav-links button {
-        display: initial;
-        text-align: right;
-        background-color: transparent;
-        border: none;
-        font-size: xx-large;
-        color: black;
-        font-weight: 300;
-        margin: 0;
-        width: max-content;
-        padding: 0;
-    }
-
-    .nav-links button:active {
-        font-size: x-large;
-    }
-    */
     .topnav-hamburger-icon-closed {
         display: initial;
         text-align: right;
@@ -219,42 +231,6 @@ footer {
         z-index: 999;
     }
 } 
-
-@media screen and (max-width: 850px) {
-    .footer-social {
-        display: none;
-    }
-    footer {
-        background-color: black;
-        color: white;
-        display: grid;
-        grid-template-columns: auto auto auto auto auto;
-        text-align: center;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-}
-
-@media screen and (max-width: 650px) { 
-    footer {
-        background-color: black;
-        color: white;
-        display: grid;
-        grid-template-columns: auto auto;
-        text-align: center;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-}
-
-@media screen and (max-width: 650px) {
-    footer {
-        background-color: black;
-        color: white;
-        display: grid;
-        grid-template-columns: auto;
-        text-align: center;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-}
 
 @keyframes slideIn {
     from {
