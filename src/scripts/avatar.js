@@ -20,9 +20,9 @@ fetch("https://api.auth.lifplatforms.com/auth/verify_token")
 
         // Update avatar image
         document.getElementById("user-avatar").innerHTML = `
-                                                            <img onclick='toggle_account_panel()' src='https://api.auth.lifplatforms.com/profile/get_avatar/null' alt='User Avatar'>
-                                                            <iframe class='closed' id='account_panel' src='https://api.auth.lifplatforms.com/profile/get_profile/${username}?service_url="https://lifplatforms.com'></iframe>
-                                                            `;
+            <img onclick='toggle_account_panel()' src='https://api.auth.lifplatforms.com/profile/get_avatar/null' alt=''>
+            <iframe class='closed' id='account_panel' src='https://api.auth.lifplatforms.com/profile/get_profile/${username}?service_url="https://lifplatforms.com'></iframe>
+        `;
     } else {
         throw new Error("Request failed with status code: " + response.status);
     }
@@ -32,7 +32,7 @@ fetch("https://api.auth.lifplatforms.com/auth/verify_token")
 
     // Update avatar image
     document.getElementById("user-avatar").innerHTML = `
-                                                        <img onclick='toggle_account_panel()' src='https://api.auth.lifplatforms.com/profile/get_avatar/null' alt='User Avatar'>
-                                                        <iframe class='closed' id='account_panel' src='https://api.auth.lifplatforms.com/profile/get_profile/guest?service_url="https://lifplatforms.com'></iframe>
-                                                       `;
+        <img onclick='toggle_account_panel()' src='https://api.auth.lifplatforms.com/profile/get_avatar/null' alt=''>
+        <iframe class='closed' id='account_panel' src='https://api.auth.lifplatforms.com/profile/get_profile/guest?service_url="https://lifplatforms.com'></iframe>
+    `;
 })
