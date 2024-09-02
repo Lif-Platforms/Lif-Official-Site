@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Lif Platforms.">
+    <meta name="keywords" content="Lif Platforms Social Media Contact"></meta>
+    <link rel="stylesheet" href="css/contact us.css"> 
+    <link rel="stylesheet" href="css/global.css"> 
+    <link rel="shortcut icon" href="icons/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+    <script src="scripts/sidenav-toggle.js"></script>
+    <script src="scripts/microsoft-clarity.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script src="scripts/cookie-banner-toggle.js"></script>
+    <title>Lif Platforms | Contact Us</title>
+</head>
+<header>
+    <div class="header-title">
+        <h1>Contact Us</h1>
+    </div>
+</header>
+<%- navbar %>
+<!--Cookie Banner Notice-->
+<div class="cookie-banner-closed" id="cookie-banner">
+    <div>
+        <h1>Accept Cookies?</h1>
+        <p>Lif Platforms uses cookies to provide analytics data for our site.</p>
+    </div>
+    <button onclick="accept_cookies()">Accept</button>
+</div>
+<body>
+    <section class="section-a">
+        <div>
+            <h1>Why Contact Us</h1>
+            <p>There are many reasons to contact Lif. These may include feature requests for services, support with services, and more.</p>
+        </div>
+        <div>
+            <img src="images/contact us/contact-us.png" alt="alt text">
+        </div>
+    </section>
+    <section class="section-b" id="contact-methods">
+        <div class="contact-methods-header">
+            <h1>Contact Methods</h1>
+            <p>Lif has a few ways to contact us. Here are our contact methods.</p>
+        </div>
+        <br>
+        <div class="link-container">
+            <a href="mailto:lif.platforms@gmail.com" title="Email Us">
+                <div style="background-color: rgb(255, 102, 102);">
+                    <h1>Email</h1>
+                    <p>Email us at lif.platforms@gmail.com.</p>
+                </div>
+            </a>
+            <a href="https://twitter.com/Lif_Platforms" target="_blank" title="Reach out through X">
+                <div style="background-color: rgb(37, 37, 37)">
+                    <h1>X</h1>
+                    <p>Reach out to us through X.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+</body>
+<%- footer %>
+</html>

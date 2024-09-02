@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lif Platforms Ringer. Say hello, with Ringer.">
+    <meta name="keywords" content="Lif Platforms Social Media Messaging Ringer"></meta>
+    <link rel="stylesheet" href="css/ringer.css"> 
+    <link rel="stylesheet" href="css/global.css"> 
+    <link rel="shortcut icon" href="icons/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+    <script src="scripts/services/ringer/animation-ringer1.js"></script>
+    <script src="scripts/services/ringer/animation-ringer2.js"></script>
+    <script src="scripts/services/ringer/animation-ringer3.js"></script>
+    <script src="scripts/sidenav-toggle.js"></script>
+    <script src="scripts/microsoft-clarity.js"></script>
+    <script src="scripts/cookie-banner-toggle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <title>Lif Platforms | Ringer</title>
+</head>
+<%- navbar %>
+<header>
+    <div class="header-title">
+        <img src="images/services/Ringerlogo.png" /> 
+        <% if (typeof download_message === 'undefined') { %>
+            <button onclick="window.location.href='/ringer%20downloads'">Download Ringer</button>
+        <% } else { %>
+            <button onclick="window.location.href='/ringer/platform_detect/download'"><%= download_message %></button>
+        <% } %>
+    </div>
+    <div class="header-divider">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" class="shape-fill"></path>
+        </svg>
+    </div>
+</header>
+<!--Cookie Banner Notice-->
+<div class="cookie-banner-closed" id="cookie-banner">
+    <div>
+        <h1>Accept Cookies?</h1>
+        <p>Lif Platforms uses cookies to provide analytics data for our site.</p>
+    </div>
+    <button onclick="accept_cookies()">Accept</button>
+</div>
+<body>
+    <section class="section-a">
+        <div>
+            <h1>The Place To Chat</h1>
+            <p>Ringer is the place to chat and connect with the people that matter most</p>
+        </div>
+        <div>
+            <img src="images/services/Ringer-Chat.png" alt="Ringer">
+        </div>
+    </section>
+    <section class="section-b">
+        <div>
+            <img src="images/services/Ringer-Hang-Out.png" alt="">
+        </div>
+        <div>
+            <h1>The Place To Hang Out</h1>
+            <p>Ringer makes it easy to hang out with your friends and people that matter</p>
+        </div>
+    </section>
+    <section class="section-c">
+        <div>
+            <h1>Cross Platform</h1>
+            <p>Ringer is available wherever you need it</p>
+            <span>Coming Soon</span>
+        </div>
+        <div>
+            <img src="images/services/Ringer-Cross-Platform.png" alt="">
+        </div>
+    </section>
+</body>
+<%- footer %>
+</html>
