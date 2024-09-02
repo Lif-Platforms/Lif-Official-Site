@@ -19,7 +19,7 @@ function ToggleSideNav() {
         
     } else {
         sideNav.className = "hamburger-menu-hide";
-        navBar.style.borderBottom = "1px solid black";
+        navBar.style.borderBottom = "1px solid #d6d6d6";
         hamburger_icon.className = "topnav-hamburger-icon-closed";
     }
 }

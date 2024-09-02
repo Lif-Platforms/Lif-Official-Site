@@ -155,7 +155,7 @@ app.get('/ringer/platform_detect/download', async (req, res) => {
     if (ua.platform === "Apple Mac") {
         res.redirect("https://github.com/Lif-Platforms/Ringer-Client-Desktop/releases/latest/download/" + file['mac-os']);
 
-    } else if (ua.platform === "Windows") {
+    } else if (ua.platform === "Microsoft Windows") {
         res.redirect("https://github.com/Lif-Platforms/Ringer-Client-Desktop/releases/latest/download/" + file['windows']);
 
     } else {

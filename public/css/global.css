@@ -227,7 +227,7 @@ footer hr {
         position: fixed;
         top: 0;
         width: 100%;
-        border-bottom: solid black 1px;
+        border-bottom: solid #d6d6d6 1px;
         z-index: 999;
     }
 } 
