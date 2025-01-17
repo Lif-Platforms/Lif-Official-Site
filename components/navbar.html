@@ -1,5 +1,7 @@
 <nav id="navbar">
     <script src="scripts/navbar/sidenav-toggle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script src="scripts/navbar/topnav-account.js"></script>
     <div class="nav-logo">
         <a href="/">
             <img src="images/index/Lif-Logo-Dark.png">
@@ -10,6 +12,11 @@
         <a href="/services">Services</a>
         <a target="_blank" href="https://support.lifplatforms.com">Support</a>
         <a href="/contact us">Contact Us</a>
+    </div>
+    <div class="nav-controls">
+        <div class="nav-account" id="topnav-user-avatar">
+            <!--User avatar and account panel will be added by script-->
+        </div>
         <button type="button" onclick="ToggleSideNav();" class="topnav-hamburger-icon-closed" id="hamburger-icon">
             <span></span>
             <span></span>
