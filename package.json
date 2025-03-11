@@ -1,6 +1,6 @@
 {
   "name": "lif-official-site",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Official Lif Platforms Website",
   "main": "server.js",
   "scripts": {
