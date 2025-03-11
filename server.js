@@ -3,6 +3,7 @@ const express = require('express');
 const fs = require('fs');
 const app = express();
 const useragent = require('express-useragent');
+const { toHTML } = require('@portabletext/to-html');
 
 app.use(express.static('public'));
 app.use(useragent.express());
@@ -184,20 +185,77 @@ app.get('/lif%20accounts', (req, res) => {
 })
 
 app.get('/privacy%20policy', (req, res) => {
+    res.redirect('/legal/privacy-policy');
+})
+
+app.get('/terms%20of%20service', (req, res) => {
+    res.redirect('/legal/terms-of-service');
+})
+
+app.get('/legal/:slug', async (req, res) => {
     try {
         const navbar = fs.readFileSync('components/navbar.html', 'utf8');
         const footer = fs.readFileSync('components/footer.html');
-        res.render('privacy policy', { navbar, footer });
+        const slug = req.params.slug;
+
+        // Fetch document from backend
+        const documentReq = await fetch(`https://catli65q.api.sanity.io/v2025-03-11/data/query/production?query=*%5B+_type%3D%3D%27policy%27+%26%26+slug.current%3D%3D%27${slug}%27+%5D`);
+
+        // Check if request was successful
+        if (!documentReq.ok) {
+            return req.status(500).send('Internal Server Error');
+        }
+
+        // Parse response
+        const document = await documentReq.json();
+
+        // Check if document exists
+        if (document.result.length === 0) {
+            return res.status(404).render('404', { navbar, footer });
+        }
+
+        // Render document
+        const documentData = document.result[0];
+        const documentContent = toHTML(documentData.content);
+
+        res.render('policy', {
+            navbar,
+            footer,
+            document: documentData,
+            title: documentData.title,
+            description: documentData.description,
+            lastUpdated: documentData._updatedAt,
+            document: documentContent
+        });
+
     } catch {
         res.status(500).send('Internal Server Error');
     }
 })
 
-app.get('/terms%20of%20service', (req, res) => {
+app.get('/legal', async (req, res) => {
     try {
         const navbar = fs.readFileSync('components/navbar.html', 'utf8');
         const footer = fs.readFileSync('components/footer.html');
-        res.render('terms of service', { navbar, footer });
+
+        // Fetch policies from backend
+        const policiesReq = await fetch('https://catli65q.api.sanity.io/v2025-03-11/data/query/production?query=*%5B_type%3D%3D%27policy%27%5D+%7B+title%2C+slug+%7D');
+
+        // Check if request was successful
+        if (!policiesReq.ok) {
+            return req.status(500).send('Internal Server Error');
+        }
+
+        // Parse response
+        const policies = await policiesReq.json();
+        let policiesList = "";
+
+        // Render policies
+        policies.result.forEach(policy => {
+            policiesList += `<li><a href="/legal/${policy.slug.current}">${policy.title}</a></li>`;
+        });
+
+        res.render('legal', { navbar, footer, policies: policiesList });
     } catch {
         res.status(500).send('Internal Server Error');
     }
@@ -207,7 +265,7 @@ app.all('*', (req, res) => {
     try {
         const navbar = fs.readFileSync('components/navbar.html', 'utf8');
         const footer = fs.readFileSync('components/footer.html');
-        res.render('404', { navbar, footer });
+        res.status(404).render('404', { navbar, footer });
     } catch {
         res.status(500).send('Internal Server Error');
     }
