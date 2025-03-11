@@ -1,0 +1,43 @@
+header {
+    height: 300px;
+    background-image: url("/images/legal/header.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: xx-large;
+    text-shadow: 0px 0px 4px white;
+}
+
+header p {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: medium;
+    text-shadow: 0px 0px 4px white;
+}
+
+header .header-text {
+    height: max-content;
+    width: max-content;
+}
+
+.content {
+    padding: 20px;
+}
+
+.content h1 {
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.content li {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    margin: 10px 0;
+}
