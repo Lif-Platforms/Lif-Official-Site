@@ -57,6 +57,7 @@ header {
 
 .section-a p {
     font-size: large;
+    padding: 0px 10px; 
 }
 
 .services {
