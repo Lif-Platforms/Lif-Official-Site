@@ -4,6 +4,7 @@ const fs = require('fs');
 const app = express();
 const useragent = require('express-useragent');
 const { toHTML } = require('@portabletext/to-html');
+require('dotenv').config();
 
 app.use(express.static('public'));
 app.use(useragent.express());
@@ -259,6 +260,37 @@ app.get('/legal', async (req, res) => {
     } catch {
         res.status(500).send('Internal Server Error');
     }
+})
+
+app.post('/legal/alert', async (req, res) => {
+    const payload = req.body;
+  
+    // Get document data
+    const documentName = payload.document.title || payload.document.name;
+    const documentSlug = payload.document.slug ? payload.document.slug.current : null;
+
+    // Verify sanity secret
+    if (req.headers['x-sanity-secret'] !== process.env.SANITY_SECRET) {
+        return res.status(401).send("Unauthorized");
+    }
+
+    // Make email request to auth server
+    const response = await fetch(`${process.env.AUTH_SERVER_URL}/email/send_all`, {
+        method: "POST",
+        headers: {
+            subject: `Our ${documentName} Has Been Updated.`,
+            access_token: process.env.AUTH_SERVER_ACCESS_TOKEN,
+        },
+        body: `We have updated our ${documentName}. Your continued use of the service shall constitute your acceptance of these new terms.
+        Updated Terms: https://lifplatforms.com/legal/${documentSlug}`
+    });
+
+    // Verify email request
+    if (!response.ok) {
+        return res.status(500).send("Internal server error");
+    }
+
+    return res.status(200).send('Webhook received successfully');
 })
 
 app.all('*', (req, res) => {
