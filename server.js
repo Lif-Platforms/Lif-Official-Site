@@ -262,7 +262,7 @@ app.get('/legal', async (req, res) => {
     }
 })
 
-app.post('/legal/alert', async (req, res) => {
+app.post('/api/legal/alert', async (req, res) => {
     const payload = req.body;
   
     // Get document data
