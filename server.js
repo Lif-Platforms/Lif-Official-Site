@@ -5,6 +5,7 @@ const app = express();
 const useragent = require('express-useragent');
 const { toHTML } = require('@portabletext/to-html');
 require('dotenv').config();
+const crypto = require('crypto');
 
 app.use(express.static('public'));
 app.use(useragent.express());
@@ -277,11 +278,25 @@ app.post('/api/legal/alert', async (req, res) => {
     const documentName = payload.title;
     const documentSlug = payload.slug.current;
 
-    // Verify sanity secret
-    if (req.headers['x-sanity-secret'] !== process.env.SANITY_SECRET) {
-        return res.status(401).send("Unauthorized");
+    // Ensure webhook signature is present
+    if (!req.headers['sanity-webhook-signature']) {
+        return res.status(401).send("Unauthorized, signature missing");
     }
-    
+
+    // Extract v1 signature
+    const v1Signature = req.headers['sanity-webhook-signature'].split('v1=')[1];
+
+    // Get and hash sanity secret
+    const sanitySecret = process.env.SANITY_SECRET;
+    const hash = crypto.createHmac('sha256', sanitySecret)
+        .update(JSON.stringify(payload))
+        .digest('hex');
+
+    // Verify signature
+    if (v1Signature !== hash) {
+        return res.status(401).send("Unauthorized, signature mismatch");
+    }
+
     // Make email request to auth server
     const response = await fetch(`${process.env.AUTH_SERVER_URL}/email/send_all`, {
         method: "POST",

@@ -11,6 +11,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@portabletext/to-html": "^2.0.14",
+    "crypto": "^1.0.1",
     "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "express": "^4.20.0",
