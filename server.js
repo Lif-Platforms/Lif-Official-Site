@@ -274,26 +274,14 @@ app.post('/api/legal/alert', async (req, res) => {
     const payload = req.body;
     
     // Get document data
-    //const documentName = payload.document.title || payload.document.name;
-    //const documentSlug = payload.document.slug ? payload.document.slug.current : null;
+    const documentName = payload.title;
+    const documentSlug = payload.slug.current;
 
     // Verify sanity secret
-    /*
     if (req.headers['x-sanity-secret'] !== process.env.SANITY_SECRET) {
         return res.status(401).send("Unauthorized");
     }
-        */
-
-    fs.appendFile('webhook.log', JSON.stringify(payload, null, 2), (err) => {
-        if (err) {
-            console.error('Error writing to file', err);
-        } else {
-            console.log('Webhook data logged successfully');
-        }
-    }
-    );
-
-    /*
+    
     // Make email request to auth server
     const response = await fetch(`${process.env.AUTH_SERVER_URL}/email/send_all`, {
         method: "POST",
@@ -309,7 +297,6 @@ app.post('/api/legal/alert', async (req, res) => {
     if (!response.ok) {
         return res.status(500).send("Internal server error");
     }
-    */
 
     return res.status(200).send('Webhook received successfully');
 })
