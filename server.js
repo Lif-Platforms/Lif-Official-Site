@@ -9,6 +9,10 @@ require('dotenv').config();
 app.use(express.static('public'));
 app.use(useragent.express());
 
+// Middleware to parse JSON and URL-encoded payloads
+app.use(express.json()); // for parsing application/json
+app.use(express.urlencoded({ extended: true }));
+
 // Set view engine
 app.set('view engine', 'ejs');
 
@@ -263,17 +267,33 @@ app.get('/legal', async (req, res) => {
 })
 
 app.post('/api/legal/alert', async (req, res) => {
+    console.log('Request received');
+    console.log('Headers:', req.headers);
+    console.log('Body:', req.body);
+    
     const payload = req.body;
-  
+    
     // Get document data
-    const documentName = payload.document.title || payload.document.name;
-    const documentSlug = payload.document.slug ? payload.document.slug.current : null;
+    //const documentName = payload.document.title || payload.document.name;
+    //const documentSlug = payload.document.slug ? payload.document.slug.current : null;
 
     // Verify sanity secret
+    /*
     if (req.headers['x-sanity-secret'] !== process.env.SANITY_SECRET) {
         return res.status(401).send("Unauthorized");
     }
+        */
 
+    fs.appendFile('webhook.log', JSON.stringify(payload, null, 2), (err) => {
+        if (err) {
+            console.error('Error writing to file', err);
+        } else {
+            console.log('Webhook data logged successfully');
+        }
+    }
+    );
+
+    /*
     // Make email request to auth server
     const response = await fetch(`${process.env.AUTH_SERVER_URL}/email/send_all`, {
         method: "POST",
@@ -289,6 +309,7 @@ app.post('/api/legal/alert', async (req, res) => {
     if (!response.ok) {
         return res.status(500).send("Internal server error");
     }
+    */
 
     return res.status(200).send('Webhook received successfully');
 })
