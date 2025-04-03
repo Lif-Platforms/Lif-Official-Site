@@ -5,38 +5,21 @@ header {
     margin-bottom: 15%;
 }
 
+header h1 {
+    font-size: 150px;
+    margin: 10px 0;
+}
+
 header a {
-    background: rgb(14, 219, 143);
-    background: linear-gradient(90deg, rgba(14, 219, 143, 1) 0%, rgba(0, 212, 255, 1) 100%);
-    border-radius: 0.5em;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 10px;
-    margin-top: 20px;
-    display: block;
-    width: max-content;
-    margin-left: auto;
-    margin-right: auto;
-    transition: ease-in-out 0.2s;
-}
-
-header a:hover {
-    opacity: 0.5;
-}
-
-header a:active {
-    transform: scale(0.95);
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
 }
 
 @media screen and (max-width: 700px) {
-    header img {
-        width: 100%;
-        margin-top: 15%;
-    }
-
     header {
         padding: 20px;
         margin-bottom: 50%;
+        margin-top: 100px;
     }
 }
