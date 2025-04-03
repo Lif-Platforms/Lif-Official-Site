@@ -269,8 +269,6 @@ app.get('/legal', async (req, res) => {
 
 app.post('/api/legal/alert', async (req, res) => {
     console.log('Request received');
-    console.log('Headers:', req.headers);
-    console.log('Body:', req.body);
     
     const payload = req.body;
     
@@ -291,6 +289,10 @@ app.post('/api/legal/alert', async (req, res) => {
     const hash = crypto.createHmac('sha256', sanitySecret)
         .update(JSON.stringify(payload))
         .digest('hex');
+
+    // Log the hash and v1Signature for debugging
+    console.log('Hash:', hash);
+    console.log('V1 Signature:', v1Signature);
 
     // Verify signature
     if (v1Signature !== hash) {
