@@ -278,7 +278,7 @@ app.post('/api/legal/alert', async (req, res) => {
 
     // Verify the request signature
     const sanitySecret = process.env.SANITY_WEBHOOK_SECRET;
-    if (!(await isValidSignature(payload, SIGNATURE_HEADER_NAME, sanitySecret))) {
+    if (!(await isValidSignature(JSON.stringify(payload), SIGNATURE_HEADER_NAME, sanitySecret))) {
         return res.status(401).send('Invalid signature');
     }
 
