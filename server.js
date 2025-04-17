@@ -4,9 +4,15 @@ const fs = require('fs');
 const app = express();
 const useragent = require('express-useragent');
 const { toHTML } = require('@portabletext/to-html');
+require('dotenv').config();
+const { isValidSignature, SIGNATURE_HEADER_NAME } = require('@sanity/webhook');
 
 app.use(express.static('public'));
 app.use(useragent.express());
+
+// Middleware to parse JSON and URL-encoded payloads
+app.use(express.json()); // for parsing application/json
+app.use(express.urlencoded({ extended: true }));
 
 // Set view engine
 app.set('view engine', 'ejs');
@@ -259,6 +265,41 @@ app.get('/legal', async (req, res) => {
     } catch {
         res.status(500).send('Internal Server Error');
     }
+})
+
+app.post('/api/legal/alert', async (req, res) => {
+    const payload = req.body;
+    
+    // Get document data
+    const documentName = payload.title;
+    const documentSlug = payload.slug.current;
+
+    // Get signature verification information
+    const sanitySecret = process.env.SANITY_WEBHOOK_SECRET;
+    const secretHeader = req.headers[SIGNATURE_HEADER_NAME];
+    
+    // Verify the request signature
+    if (!(await isValidSignature(JSON.stringify(payload), secretHeader, sanitySecret))) {
+        return res.status(401).send('Invalid signature');
+    }
+
+    // Make email request to auth server
+    const response = await fetch(`${process.env.AUTH_SERVER_URL}/mail/send_all`, {
+        method: "POST",
+        headers: {
+            subject: `Our ${documentName} Has Been Updated.`,
+            accessToken: process.env.AUTH_SERVER_ACCESS_TOKEN,
+        },
+        body: `We have updated our ${documentName}. Your continued use of the service shall constitute your acceptance of these new terms.
+        Updated Terms: https://lifplatforms.com/legal/${documentSlug}`
+    });
+
+    // Verify email request
+    if (!response.ok) {
+        return res.status(500).send("Internal server error");
+    }
+
+    return res.status(200).send('Webhook received successfully');
 })
 
 app.all('*', (req, res) => {

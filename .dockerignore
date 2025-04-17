@@ -3,3 +3,4 @@ node_modules
 CODE_OF_CONDUCT.md
 LICENCE
 README.md
+.env
