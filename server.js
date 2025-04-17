@@ -268,26 +268,27 @@ app.get('/legal', async (req, res) => {
 })
 
 app.post('/api/legal/alert', async (req, res) => {
-    console.log('Request received');
-    
     const payload = req.body;
     
     // Get document data
     const documentName = payload.title;
     const documentSlug = payload.slug.current;
 
-    // Verify the request signature
+    // Get signature verification information
     const sanitySecret = process.env.SANITY_WEBHOOK_SECRET;
-    if (!(await isValidSignature(JSON.stringify(payload), SIGNATURE_HEADER_NAME, sanitySecret))) {
+    const secretHeader = req.headers[SIGNATURE_HEADER_NAME];
+    
+    // Verify the request signature
+    if (!(await isValidSignature(JSON.stringify(payload), secretHeader, sanitySecret))) {
         return res.status(401).send('Invalid signature');
     }
 
     // Make email request to auth server
-    const response = await fetch(`${process.env.AUTH_SERVER_URL}/email/send_all`, {
+    const response = await fetch(`${process.env.AUTH_SERVER_URL}/mail/send_all`, {
         method: "POST",
         headers: {
             subject: `Our ${documentName} Has Been Updated.`,
-            access_token: process.env.AUTH_SERVER_ACCESS_TOKEN,
+            accessToken: process.env.AUTH_SERVER_ACCESS_TOKEN,
         },
         body: `We have updated our ${documentName}. Your continued use of the service shall constitute your acceptance of these new terms.
         Updated Terms: https://lifplatforms.com/legal/${documentSlug}`
