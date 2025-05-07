@@ -99,21 +99,15 @@ fetch('https://api.auth.lifplatforms.com/auth/verify_token', {
 })
 .then((response) => {
     if (response.ok) {
-        // Add avatar to dom
-        create_user_avatar(true);
-
-        // Add account panel to dom
-        create_account_panel(true);
+        create_user_avatar(true); // Add avatar to dom
+        create_account_panel(true); // Add account panel to dom
     } else {
         throw new Error('Request failed with status code: ' + response.status);
     }
 })
 .catch(() => {
-    // Add avatar to dom
-    create_user_avatar(false);
-
-    // Add account panel to dom
-    create_account_panel(false);
+    create_user_avatar(false); // Add avatar to dom
+    create_account_panel(false); // Add account panel to dom
 })
 
 // Add event listener to document to close account panel when clicking outside of it
