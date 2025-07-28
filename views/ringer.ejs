@@ -10,29 +10,45 @@
     <link rel="stylesheet" href="css/global.css"> 
     <link rel="shortcut icon" href="icons/favicon.ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
-    <script src="scripts/services/ringer/animation-ringer1.js"></script>
-    <script src="scripts/services/ringer/animation-ringer2.js"></script>
-    <script src="scripts/services/ringer/animation-ringer3.js"></script>
     <script src="scripts/sidenav-toggle.js"></script>
     <script src="scripts/microsoft-clarity.js"></script>
     <script src="scripts/cookie-banner-toggle.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <title>Lif Platforms | Ringer</title>
 </head>
+<script>
+    function handle_download(platform) {
+        // If platform is iOS, redirect to TestFlight download
+        if (platform === "ios") {
+            window.location.href = 'https://testflight.apple.com/join/8wu1bVxU';
+            return;
+        }
+
+        // Define base URL
+        const base_url = "https://github.com/Lif-Platforms/Ringer-Client-Desktop/releases/latest/download";
+
+        // Get download file
+        fetch(`/ringer/download/${platform}`)
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
+        .then((data) => {
+            window.location.href = base_url + "/" + data.download_file;
+        })
+        .catch((err) => {
+            console.error(err);
+        })
+    }
+</script>
 <%- navbar %>
 <header>
     <div class="header-title">
-        <img src="images/services/Ringerlogo.png" /> 
-        <% if (typeof download_message === 'undefined') { %>
-            <button onclick="window.location.href='/ringer%20downloads'">Download Ringer</button>
-        <% } else { %>
-            <button onclick="window.location.href='/ringer/platform_detect/download'"><%= download_message %></button>
-        <% } %>
-    </div>
-    <div class="header-divider">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" class="shape-fill"></path>
-        </svg>
+        <span class="now-available">Now Available</span>
+        <h1 class="title">Connect Instantly with Ringer</h1>
+        <p class="promo-text">Ringer is our flagship messaging app thats safe and effective for connecting with those who matter most.</p>
+        <%- downloadButton %>
     </div>
 </header>
 <!--Cookie Banner Notice-->
@@ -45,31 +61,60 @@
 </div>
 <body>
     <section class="section-a">
-        <div>
-            <h1>The Place To Chat</h1>
-            <p>Ringer is the place to chat and connect with the people that matter most</p>
-        </div>
-        <div>
-            <img src="images/services/Ringer-Chat.png" alt="Ringer">
+        <h1 class="title">Why Choose Ringer?</h1>
+        <p class="sub-title">Built for modern communication with features that matter most to you.</p>
+        <div class="cards">
+            <div class="card">
+                <img src="/images/services/message-circle.svg">
+                <h1>Instant Messaging</h1>
+                <p>Send messages and GIFs with instant delivery.</p>
+            </div>
+             <div class="card">
+                <img src="/images/services/download-light.svg">
+                <h1>Cross Platform</h1>
+                <p>Available on Windows, Mac, and iOS. Syncs seamlessly across all your devices.</p>
+            </div>
         </div>
     </section>
     <section class="section-b">
-        <div>
-            <img src="images/services/Ringer-Hang-Out.png" alt="">
-        </div>
-        <div>
-            <h1>The Place To Hang Out</h1>
-            <p>Ringer makes it easy to hang out with your friends and people that matter</p>
+        <h1 class="title">See Ringer in Action</h1>
+        <p class="sub-title">Beautiful, intuitive design that makes messaging a joy. Here's what Ringer looks like on your devices.</p>
+        <div class="cards">
+            <div class="card">
+                <img src="/images/services/chat-interface.png">
+                <h1>Chat Interface</h1>
+                <p>Clean, modern, sleek chat interface with easy navigation.</p>
+            </div>
+            <div class="card">
+                <img src="/images/services/gif-collage.png">
+                <h1>GIF Messages</h1>
+                <p>Send animated GIF messages powered by GIPHY to enhance your chat experience.</p>
+            </div>
+            <div class="card">
+                <img src="/images/services/desktop-app.png">
+                <h1>Desktop App</h1>
+                <p>Stay in the loop even on the desktop with our intuitive app for Mac and Windows.</p>
+            </div>
         </div>
     </section>
     <section class="section-c">
-        <div>
-            <h1>Cross Platform</h1>
-            <p>Ringer is available wherever you need it</p>
+        <h1 class="title">Ready to Get Started?</h1>
+        <p class="sub-title">Download Ringer today and experience the future of messaging.</p>
+        <div class="cards">
+            <div class="card" onclick="handle_download('ios')">
+                <img src="/images/services/download-light.svg">
+                <h1>iOS</h1>
+            </div>
+            <div class="card" onclick="handle_download('mac_os')">
+                <img src="/images/services/download-light.svg">
+                <h1>Mac</h1>
+            </div>
+            <div class="card" onclick="handle_download('windows')">
+                <img src="/images/services/download-light.svg">
+                <h1>Windows</h1>
+            </div>
         </div>
-        <div>
-            <img src="images/services/Ringer-Cross-Platform.png" alt="">
-        </div>
+        <span class="bottom-text">Free Download &middot; No Subscription Required</span>
     </section>
 </body>
 <%- footer %>
