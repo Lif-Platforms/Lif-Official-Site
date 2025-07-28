@@ -63,10 +63,30 @@ app.get('/ringer', (req, res) => {
         const footer = fs.readFileSync('components/footer.html');
 
         const ua = req.useragent;
+        let platformName;
 
-        const download_message = "Download For " + ua.platform;
+        if (ua.platform === "Apple Mac") {
+            platformName = "Mac";
+        } else if (ua.platform === "Microsoft Windows") {
+            platformName = "Windows";
+        } else if (ua.platform === "iPhone") {
+            platformName = "iOS";
+        }
 
-        res.render('ringer', { navbar, footer, download_message });
+        if (platformName) {
+            downloadButton = `
+                <button onclick="window.location.href='/ringer/platform_detect/download'">
+                    <img src='/images/services/download-dark.svg'>
+                    Download For ${platformName}
+                </button>
+            `
+        } else {
+            downloadButton = `
+                <span class='unsupported-platform'>Ringer is not supported on your platform</span>
+            `
+        }
+
+        res.render('ringer', { navbar, footer, downloadButton });
     } catch {
         res.status(500).send('Internal Server Error');
     }
@@ -122,7 +142,7 @@ app.get('/ringer/download/:platform', async (req, res) => {
             res.json({download_file: file['mac-os']});
 
         } else {
-            res.status(400).send("Bad platform. Accepted platforms: 'windows', 'mac_os'.");
+            res.status(400).send("Bad platform. Accepted platforms: 'windows', 'mac_os', ios.");
         }
     } catch (error) {
         res.status(500).send(`Error: ${error.message}`);
@@ -165,6 +185,8 @@ app.get('/ringer/platform_detect/download', async (req, res) => {
     } else if (ua.platform === "Microsoft Windows") {
         res.redirect("https://github.com/Lif-Platforms/Ringer-Client-Desktop/releases/latest/download/" + file['windows']);
 
+    } else if (ua.platform === "iPhone") {
+        res.redirect('https://testflight.apple.com/join/8wu1bVxU')
     } else {
         res.status(400).send('invalid platform');
     }
@@ -314,5 +336,5 @@ app.all('*', (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running: http://localhost:${PORT}`);
 });
